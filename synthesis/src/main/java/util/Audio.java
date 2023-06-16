@@ -184,7 +184,7 @@ public class Audio {
                     }
                 }
                 max+=count(txt[i].length());
-
+                //字母位置
                 int y=Integer.parseInt(fps[1])-(Integer.parseInt(fps[1])/4);
                 int fontSize=Integer.parseInt(fps[0])/24;
                 int x= (Integer.parseInt(fps[0])-(txt[i].length()*fontSize))/2;
@@ -243,13 +243,12 @@ public class Audio {
                 }
 //                分辨率
                 if(line.contains("fps")){
-                    //根据
+                    System.out.println(line);
                     String definition = line.split(",")[2];
                     definition = definition.trim().split(" ")[0];
-                    System.out.println(definition);
                     if("bt709".equals(definition))
                     {
-                        definition="1080x1920";
+                        definition=line.substring(98,107);
                     }
                     System.out.println("分辨率=" + definition);
                     xy=definition.split("x");
