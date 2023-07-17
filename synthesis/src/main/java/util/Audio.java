@@ -239,7 +239,7 @@ public class Audio {
             while((line=br.readLine())!=null) {
                 if(line.trim().startsWith("Duration:")){
                     //根据字符匹配进行切割
-                    System.out.println("视频时间 = " + line.trim().substring(0,line.trim().indexOf(",")));
+                    System.out.println("视频时间 = "  + line.trim().substring(0,line.trim().indexOf(",")));
                 }
 //                分辨率
                 if(line.contains("fps")){
@@ -251,6 +251,7 @@ public class Audio {
                         definition=line.substring(98,107);
                     }
                     System.out.println("分辨率=" + definition);
+
                     xy=definition.split("x");
                 }
             }

@@ -23,7 +23,7 @@ public class EditTestFile {
         List<String> lines = Files.readAllLines(path);
         System.out.print("请输入酒店名称:");
         String hotelName=input.next();
-        File file = new File("D:\\阿里云盘\\口播文案\\"+hotelName);
+        File file = new File("D:\\阿里云盘\\口播文案\\"+hotelName+"文案");
         if(!file.exists()) {
             file.mkdirs();
             System.out.println("文件夹创建成功！");
@@ -32,10 +32,10 @@ public class EditTestFile {
         }
         for(int i=0;i<lines.size();i++)
         {
-            file=new File("D:\\阿里云盘\\口播文案\\"+hotelName+"\\口播文件"+(i+1)+".txt");
+            file=new File("D:\\阿里云盘\\口播文案\\"+hotelName+"文案"+"\\口播文件"+(i+1)+".txt");
             file.createNewFile();
             //true表示追加内容
-            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("D:\\阿里云盘\\口播文案\\"+hotelName+"\\口播文件"+(i+1)+".txt", false));
+            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("D:\\阿里云盘\\口播文案\\"+hotelName+"文案"+"\\口播文件"+(i+1)+".txt", false));
             bufferedWriter.write(lines.get(i));
             bufferedWriter.close();
         }
